@@ -1,0 +1,35 @@
+<div class="container">
+    <div>
+    <h2>Modifier une voiture :</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID voiture</label>
+    <input type="text" [(ngModel)]="currentcar.idvoiture"
+    name="idvoiture" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom voiture</label>
+    <input type="text"[(ngModel)]= "currentcar.nomvoiture"
+    name="nomvoiture" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix voiture</label>
+    <input type="number" [(ngModel)]= "currentcar.prixvoiture"
+    name="prixvoiture" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+
+<input type="date" [ngModel]="currentcar.dateCreation | date: 'yyyy-MM-dd'"
+(ngModelChange)=" currentcar.dateCreation= $event" name="dateCreation"
+class="form-control">
+</div>
+<div class="mt-2">
+
+<button type="submit" (click)="updatecar()" class="btn btn-success">Modifer</button>
+
+</div>
+</form>
+
+</div>

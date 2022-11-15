@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date Création</th> </tr>
+    
+    <tbody *ngFor="let car of cars">
+    <tr >
+    <td>{{car.idvoiture}}</td>
+    <td>{{car.nomvoiture}}</td>
+    <td>{{car.prixvoiture}}</td>
+    <td>{{car.dateCreation | date:'dd/MM/yyyy'}}</td>
+    <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimervoiture(car)">Supprimer</a></td>
+    <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateCar',car.idvoiture]">Modifier</a></td>
+    </tr>
+    </tbody>
+    
+    </table>
+    </div>
+    </div>
+    </div>
